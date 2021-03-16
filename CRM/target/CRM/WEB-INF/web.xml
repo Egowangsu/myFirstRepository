@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>oneServlet</servlet-name>
+        <servlet-class>com.wyx.Servlet.oneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>oneServlet</servlet-name>
+        <url-pattern>/Student/save.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>oneServlet</servlet-name>
+        <url-pattern>/Student/delete.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>oneServlet</servlet-name>
+        <url-pattern>/Student/update.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>oneServlet</servlet-name>
+        <url-pattern>/Student/select.do</url-pattern>
+    </servlet-mapping>
+</web-app>

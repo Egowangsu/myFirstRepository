@@ -1,0 +1,167 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.wyx.crm.web_filter.LoginFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.wyx.crm.settings.web.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <!--application监听器-->
+  <listener>
+    <listener-class>com.wyx.crm.web_listener.ConTextInitialized</listener-class>
+  </listener>
+<!--用户控制器-->
+  <servlet>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>com.wyx.crm.settings.web.controller.UserController</servlet-class>
+  </servlet>
+  <!--市场活动控制器-->
+  <servlet>
+    <servlet-name>ActivityController</servlet-name>
+    <servlet-class>com.wyx.crm.workbench.web.controller.ActivityController</servlet-class>
+  </servlet>
+
+  <!--交易活动控制器-->
+  <servlet>
+    <servlet-name>TranController</servlet-name>
+    <servlet-class>com.wyx.crm.workbench.web.controller.TranController</servlet-class>
+  </servlet>
+  <!--线索控制器-->
+  <servlet>
+    <servlet-name>ClueController</servlet-name>
+    <servlet-class>com.wyx.crm.workbench.web.controller.ClueController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/settings/user/login.do</url-pattern>  <!--模块/功能/名称-->
+  </servlet-mapping>
+
+<!-- 市场活动控制器   -->
+
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/getUserList.do</url-pattern>  <!--获取用户名称-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/save.do</url-pattern>  <!--添加活动数据-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/pageList.do</url-pattern>  <!--局部刷新分页查询-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/delete.do</url-pattern>  <!--删除操作-->
+  </servlet-mapping> <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/getUserListAndActivity.do</url-pattern>  <!--修改操作前获取信息-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/update.do</url-pattern>  <!--修改操作-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/detail.do</url-pattern>  <!--修改操作-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/getRemarkMss.do</url-pattern>  <!--修改操作-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/deleteRemark.do</url-pattern>  <!--修改操作-->
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/saveRemark.do</url-pattern>  <!--修改操作-->
+  </servlet-mapping>
+<servlet-mapping>
+    <servlet-name>ActivityController</servlet-name>
+    <url-pattern>/workbench/activity/updateRemark.do</url-pattern>  <!--修改操作-->
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>ClueController</servlet-name>
+      <url-pattern>/workbench/clue/getUser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ClueController</servlet-name>
+    <url-pattern>/workbench/clue/saveClue.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>ClueController</servlet-name>
+  <url-pattern>/workbench/clue/pageList.do</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>ClueController</servlet-name>
+  <url-pattern>/workbench/clue/detail.do</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+  <servlet-name>ClueController</servlet-name>
+  <url-pattern>/workbench/clue/getActivityListByCondition.do</url-pattern>
+</servlet-mapping><servlet-mapping>
+  <servlet-name>ClueController</servlet-name>
+  <url-pattern>/workbench/clue/unBurn.do</url-pattern>
+</servlet-mapping><servlet-mapping>
+  <servlet-name>ClueController</servlet-name>
+  <url-pattern>/workbench/clue/getActivity.do</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>ClueController</servlet-name>
+  <url-pattern>/workbench/clue/bund.do</url-pattern>
+</servlet-mapping><servlet-mapping>
+  <servlet-name>ClueController</servlet-name>
+  <url-pattern>/workbench/clue/searchText.do</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+  <servlet-name>ClueController</servlet-name>
+  <url-pattern>/workbench/clue/convert.do</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>TranController</servlet-name>
+  <url-pattern>/workbench/transaction/add.do</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>TranController</servlet-name>
+  <url-pattern>/workbench/transaction/getCustomerName.do</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>TranController</servlet-name>
+  <url-pattern>/workbench/transaction/save.do</url-pattern>
+</servlet-mapping><servlet-mapping>
+  <servlet-name>TranController</servlet-name>
+  <url-pattern>/workbench/transaction/detail.do</url-pattern>
+</servlet-mapping><servlet-mapping>
+  <servlet-name>TranController</servlet-name>
+  <url-pattern>/workbench/transaction/getHistoryListByTranId.do</url-pattern>
+</servlet-mapping><servlet-mapping>
+  <servlet-name>TranController</servlet-name>
+  <url-pattern>/workbench/transaction/changeStage.do</url-pattern>
+</servlet-mapping><servlet-mapping>
+  <servlet-name>TranController</servlet-name>
+  <url-pattern>/workbench/chart/transaction/getChart.do</url-pattern>
+</servlet-mapping>
+
+</web-app>
